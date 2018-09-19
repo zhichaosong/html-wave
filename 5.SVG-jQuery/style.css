@@ -1,0 +1,37 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.btn-wrapper {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.btn {
+  display: inline-block;
+  background-color: white;
+  color: darkslategrey;
+  font-size: 14px;
+  border-radius: 3px;
+  padding: 4px 10px;
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+.wave {
+  position: absolute;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  z-index: 1;
+}
+
+.wave + .wave {
+  z-index: 2;
+}

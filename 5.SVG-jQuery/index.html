@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>HTML5 svg炫酷波浪线条动画插件</title>
+	
+	<link rel="stylesheet" type="text/css" href="./normalize.css"><!--CSS RESET-->
+	<link rel="stylesheet" href="./style.css">
+	
+</head>
+<body>
+
+	<svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave"><defs></defs><path id="feel-the-wave" d="M 0 124.30723895345872 C 180 148.95836124426083 180 148.95836124426083 360 136.63280009885978 C 540 124.30723895345872 540 124.30723895345872 720 139.65475793925918 C 900 155.00227692505962 900 155.00227692505962 1080 132.31745565873254 C 1260 109.63263439240545 1260 109.63263439240545 1440 139.65475793925918 L 1440 683 L 0 683 Z" fill="#B289EF"></path></svg>
+
+	<svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave"><defs></defs><path id="feel-the-wave-two" d="M 0 98.25730896788401 C 240 80.07254501985514 240 80.07254501985514 480 89.16492699386959 C 720 98.25730896788401 720 98.25730896788401 960 71.64635340791777 C 1200 45.0353978479515 1200 45.0353978479515 1440 80.46222454559705 L 1440 683 L 0 683 Z" fill="rgba(150, 97, 255, .8)"></path></svg>
+	
+	<div class="btn-wrapper">
+	  <a class="btn" data-pause="">暂停</a>
+	  <a class="btn" data-play="">播放</a>
+	</div>
+
+	
+	<script type="text/javascript" src="./TweenMax.min.js"></script>
+	<script type="text/javascript" src="./jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="./wavify.js"></script>
+	<script type="text/javascript" src="./jquery.wavify.js"></script>
+	<script type="text/javascript">
+		var wave1 = $('#feel-the-wave').wavify({
+		  height: 80,
+		  bones: 4,
+		  amplitude: 60,
+		  color: '#B289EF',
+		  speed: .15
+		});
+
+		var wave2 = $('#feel-the-wave-two').wavify({
+		  height: 60,
+		  bones: 3,
+		  amplitude: 40,
+		  color: 'rgba(150, 97, 255, .8)',
+		  speed: .25
+		});
+
+		$("[data-pause]").on('click', function(){
+		  wave1.pause();
+		  wave2.pause();
+		  return false;
+		});
+
+		$("[data-play]").on('click', function(){
+		  wave1.play();
+		  wave2.play();
+		  return false;
+		});
+	</script>
+	
+	
+
+</body></html>

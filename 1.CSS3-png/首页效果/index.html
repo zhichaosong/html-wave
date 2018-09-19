@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			.blue-bg{
+				height:510px;
+				width: 100%;
+				margin: auto;
+				background: linear-gradient(to bottom, #3ec4fc, #0081cc);
+			}
+			.top-btn{
+				height:400px;
+				background-image: url(top-btn.png);
+				background-repeat:no-repeat; background-size:100% 100%;
+			}
+			.bottom-btn{
+				height:360px;
+				background-image: url(bottom-btn.png);
+				background-repeat:no-repeat; background-size:100% 100%;
+			}
+			.water-group{
+				position: relative;
+				height:110px;
+				width: 100%;
+				overflow: hidden;
+			}
+			.water-group .water{
+				position: absolute;
+				width: 200%;
+				height:100%;
+				background-size: 50% 100%;
+			}
+			.water-group .water1{
+				top:20px;
+				left: -100%;
+				opacity: 0.2;
+				animation: water-right 20s infinite linear;
+			}
+			.water-group .water2{
+				top:30px;
+				left: 0;
+				opacity: 0.3;
+				animation: water-left 30s infinite linear;
+			}
+			.water-group .water3{
+				top:44px;
+				left: -100%;
+				animation: water-right 40s infinite linear;
+			}
+			@keyframes water-right{
+				0% {
+					transform: translateX(0) translateZ(0) scaleY(1)
+				}
+				50% {
+					transform: translateX(25%) translateZ(0) scaleY(0.85)
+				}
+				100% {
+					transform: translateX(50%) translateZ(0) scaleY(1)
+				}
+			}
+			@keyframes water-left{
+				from{
+					transform: translate(0%,0px);
+				}
+				to{
+					transform: translate(-50%,0px);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="blue-bg">
+			<div class="top-btn">
+			</div>
+			<div class="water-group">
+				<div class="water water1" style="background-image: url('wave2.png')"></div>
+				<div class="water water2" style="background-image: url('wave2.png')"></div>
+				<div class="water water3" style="background-image: url('wave2.png')"></div>
+			</div>
+			<div class="bottom-btn">
+			</div>
+		</div>
+	</body>
+</html>
